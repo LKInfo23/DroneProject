@@ -5,6 +5,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
+import java.nio.charset.StandardCharsets;
 
 public class DroneCommunicator {
     
@@ -31,7 +32,7 @@ public class DroneCommunicator {
      */
     public void send(String message) {
         try {
-            DatagramPacket dp = new DatagramPacket(message.getBytes(), message.length(), InetAddress.getByName(host), port);
+            DatagramPacket dp = new DatagramPacket(message.getBytes(StandardCharsets.UTF_8), message.length(), InetAddress.getByName(host), port);
             socket.send(dp);
         } catch (IOException e) {
             e.printStackTrace();
@@ -58,7 +59,7 @@ public class DroneCommunicator {
         DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
         try {
             socket.receive(dp);
-            return new String(dp.getData());
+            return new String(dp.getData(), 0, dp.getLength(), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
         }
