@@ -14,8 +14,8 @@ public class DroneCommunicator {
     
     /**
      * This class represents the connection to the drone. It may be used to send and receive data from and to the drone.
-     * @param host the host of the drone/where to conncet to
-     * @param port the port to connect to. Note this is UDP.
+     * @param host The host of the drone/where to connect to.
+     * @param port The port to connect to. Note: this is UDP.
      * @throws SocketException should the creation of the DatagramSocket fail
      */
     public DroneCommunicator(String host, int port) throws SocketException {
@@ -39,9 +39,9 @@ public class DroneCommunicator {
     }
     
     /**
-     * This function sends a message to the drone and listens for a response.
-     * @param message The message that should be send to the drone.
-     * @return The response send by the drone
+     * This function sends a message to the drone and returns the response if given.
+     * @param message The message that should be sent to the drone.
+     * @return The response sent by the drone.
      */
     public String sendAndReceive(String message){
         send(message);
@@ -50,8 +50,8 @@ public class DroneCommunicator {
     
     /**
      * This method returns the first new response from the drone. Should mostly be used for debugging etc.
-     * Please use {@link #sendAndReceive} mostly
-     * @return The next response from the drone
+     * Please use {@link #sendAndReceive(String)} mostly
+     * @return The next response from the drone.
      */
     public String receive() {
         byte[] buffer = new byte[1024];

@@ -1,6 +1,7 @@
 package de.grb;
 
 import de.grb.networking.DroneCommunicator;
+import de.grb.vectormath.Vector3D;
 
 import java.net.SocketException;
 
