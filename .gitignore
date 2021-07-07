@@ -99,3 +99,6 @@ target/
 
 # Local Libraries shouldn't be added to git
 .libs/
+
+# OS generated files
+.DS_Store
