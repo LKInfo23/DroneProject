@@ -6,12 +6,15 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class DroneCommunicator {
     
     String host;
     int port;
     DatagramSocket socket;
+    long lastSent = System.currentTimeMillis();
     
     /**
      * This class represents the connection to the drone. It may be used to send and receive data from and to the drone.
@@ -23,6 +26,15 @@ public class DroneCommunicator {
         this.host = host;
         this.port = port;
         socket = new DatagramSocket();
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if(System.currentTimeMillis() - lastSent > 10000) {
+                    send("battery?");
+                }
+            }
+        }, 0L, 5000L);
     }
     
     /**
@@ -34,6 +46,7 @@ public class DroneCommunicator {
         try {
             DatagramPacket dp = new DatagramPacket(message.getBytes(StandardCharsets.UTF_8), message.length(), InetAddress.getByName(host), port);
             socket.send(dp);
+            lastSent = System.currentTimeMillis();
         } catch (IOException e) {
             e.printStackTrace();
         }
