@@ -5,7 +5,7 @@ import de.grb.commands.impl.*;
 import java.util.ArrayList;
 
 public class CommandManger {
-    ArrayList<Command> commands = new ArrayList<>();
+    private final ArrayList<Command> commands = new ArrayList<>();
     
     public CommandManger() {
         addCommand(new Emergency());

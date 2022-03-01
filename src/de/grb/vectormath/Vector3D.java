@@ -7,8 +7,8 @@ public class Vector3D {
     double z;
 
     /**
-     * Class representing a three dimensional vector, which is used to control the Drone's movement.
-     * The vector's components (x,y,z) are all of type double.
+     * Class representing a three-dimensional vector, which is used to control the Drone's movement.
+     * The vector's components (x,y,z) are all the type double.
      * (If created without any constructor-parameters, all three components of the vector will be initialized as 0.)
      */
     public Vector3D() {
@@ -18,8 +18,8 @@ public class Vector3D {
     }
 
     /**
-     * Class representing a three dimensional vector, which is used to control the Drone's movement.
-     * The vector's components (x,y,z) are all of type double.
+     * Class representing a three-dimensional vector, which is used to control the Drone's movement.
+     * The vector's components (x,y,z) are all the type double.
      * @param x the x-component of the vector
      * @param y the y-component of the vector
      * @param z the z-component of the vector
@@ -31,8 +31,8 @@ public class Vector3D {
     }
 
     /**
-     * Class representing a three dimensional vector, which is used to control the Drone's movement.
-     * The vector's components (x,y,z) are all of type double.
+     * Class representing a three-dimensional vector, which is used to control the Drone's movement.
+     * The vector's components (x,y,z) are all the type double.
      * (If a vector created with another vector as a constructor-parameter, the vector will be a copied.)
      * @param v The vector to be copied.
      */
@@ -104,7 +104,7 @@ public class Vector3D {
     }
 
     /**
-     * Method to normalize a vector. This means to maintain the direction of the vector while scaling it, so its'
+     * Method to normalize a vector. This means to maintain the direction of the vector while scaling it, so its
      * length equates to 1, making it a unit vector.
      * @return The resulting normalized vector.
      */

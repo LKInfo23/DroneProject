@@ -2,7 +2,7 @@ package de.grb.commands;
 
 public abstract class Command {
     
-    String name;
+    private final String name;
     
     public Command(String name) {
         this.name = name;
@@ -14,6 +14,7 @@ public abstract class Command {
     
     /**
      * Executes the command. Returns true if the command was executed successfully.
+     *
      * @param args The arguments for the command.
      * @return true if the command was executed successfully.
      */
