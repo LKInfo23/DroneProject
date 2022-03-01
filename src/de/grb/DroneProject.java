@@ -15,7 +15,7 @@ public class DroneProject {
     public static void main(String[] args) {
         
         try {
-            droneCommunicator = new DroneCommunicator("127.0.0.1", 8889);
+            droneCommunicator = new DroneCommunicator("192.168.10.1", 8889);
             commandManger = new CommandManger();
             // needed so the drone accepts sdk commands
             commandManger.executeCommand("sdk", null);
