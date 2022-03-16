@@ -28,7 +28,7 @@ public class DroneCommunicator {
         this.host = host;
         this.port = port;
         droneSocket = new DatagramSocket();
-        listenerSocket = new DatagramSocket(8880);
+        listenerSocket = new DatagramSocket(8890);
         Timer timer = new Timer();
         // this is technically not the way according to java convention, but it is more readable
         //noinspection CodeBlock2Expr
