@@ -13,6 +13,6 @@ public class SDKMode extends Command {
     
     @Override
     public boolean execute(String[] args) {
-        return DroneProject.droneCommunicator.sendAndReceive("Command").equalsIgnoreCase("ok");
+        return DroneProject.droneCommunicator.sendAndReceive("command").equalsIgnoreCase("ok");
     }
 }
