@@ -150,4 +150,14 @@ public class Vector3D {
         return "(" + this.x + ", " + this.y + ", " + this.z + ")";
     }
 
+    /**
+     * Method to find if two vectors are collinear
+     * @param v the vector where the collinearity needs to be found with
+     * @return if the vectors are collinear
+     */
+    public boolean isCollinear(Vector3D v) {
+        Vector3D Zero = new Vector3D();
+        return (this.cross(v) == Zero);
+        //if the cross product of the vectors equals the Zero element they are collinear
+    }
 }
