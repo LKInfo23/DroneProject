@@ -2,7 +2,7 @@ package de.grb.excercises;
 
 import de.grb.vectormath.Vector3D;
 
-public class AdditionExerciseGenerator extends Exercise {
+public class AdditionExerciseGenerator extends AddSubExercise {
 
     @Override
     public void Generate() {
