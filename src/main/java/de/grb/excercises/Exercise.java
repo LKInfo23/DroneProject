@@ -4,5 +4,5 @@ import de.grb.vectormath.Vector3D;
 
 public abstract class Exercise {
     
-    abstract void Generate();
+    public abstract void Generate();
 }

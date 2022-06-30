@@ -74,10 +74,12 @@ public class Vector3D {
      * @return The resulting vector.
      */
     public Vector3D add(Vector3D v) {
-        this.x += v.x;
-        this.y += v.y;
-        this.z += v.z;
-        return this;
+        //for some reason the previous solution did not work;
+        Vector3D sol = new Vector3D();
+        sol.x = this.x + v.x;
+        sol.y = this.y + v.y;
+        sol.z = this.z + v.z;
+        return sol;
     }
 
     /**
@@ -86,10 +88,12 @@ public class Vector3D {
      * @return The resulting vector.
      */
     public Vector3D sub(Vector3D v) {
-        this.x -= v.x;
-        this.y -= v.y;
-        this.z -= v.z;
-        return this;
+        //for some reason the previous solution did not work;
+        Vector3D sol = new Vector3D();
+        sol.x = this.x - v.x;
+        sol.y = this.y - v.y;
+        sol.z = this.z - v.z;
+        return sol;
     }
 
     /**
@@ -146,7 +150,7 @@ public class Vector3D {
      * Method to make a Vector into a String.
      * @return the Vector in String form.
      */
-    public String VectorToString() {
+    public String toString() {
         return "(" + this.x + ", " + this.y + ", " + this.z + ")";
     }
 
@@ -165,6 +169,7 @@ public class Vector3D {
      * Method to return a vector that is orthogonal on the XY-Axis
      * @return a orthogonal Vector
      */
+    //TODO: how to handle this.y = 0
     public Vector3D OrthogonalXY() {
         return new Vector3D(1, -this.x/this.y, 0).normalize();
     }

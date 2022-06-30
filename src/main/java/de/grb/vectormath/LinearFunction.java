@@ -53,6 +53,10 @@ public class LinearFunction {
         StartingPoint.add(Direction.scalarMultiplication(random.nextInt(10) - 5));
     }
 
+    public String toString() {
+        return "x = " + StartingPoint.toString() + " + r * " + Direction.toString();
+    }
+
     /**
      * Method to get the Relation of two linear functions.
      * @param f a LinearFunction
