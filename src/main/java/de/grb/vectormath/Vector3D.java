@@ -157,7 +157,15 @@ public class Vector3D {
      */
     public boolean isCollinear(Vector3D v) {
         Vector3D Zero = new Vector3D();
-        return (this.cross(v) == Zero);
+        return (this.cross(v).equals(Zero));
         //if the cross product of the vectors equals the Zero element they are collinear
+    }
+
+    /**
+     * Method to return a vector that is orthogonal on the XY-Axis
+     * @return a orthogonal Vector
+     */
+    public Vector3D OrthogonalXY() {
+        return new Vector3D(1, -this.x/this.y, 0).normalize();
     }
 }

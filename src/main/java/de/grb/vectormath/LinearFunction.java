@@ -114,4 +114,12 @@ public class LinearFunction {
         Vector3D Intersection = this.StartingPoint.add(this.Direction.scalarMultiplication(r));
         return new LinearFunctionSolution(LinearFunctionRelation.INTERSECT, Intersection);
     }
+
+    public Vector3D pointAt(int x) {
+        return new Vector3D(this.StartingPoint.add(this.Direction.scalarMultiplication(x)));
+    }
+
+    public Vector3D getDirection() {
+        return Direction;
+    }
 }
