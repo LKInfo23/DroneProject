@@ -166,10 +166,9 @@ public class Vector3D {
     }
 
     /**
-     * Method to return a vector that is orthogonal on the XY-Axis
-     * @return a orthogonal Vector
+     * Method to return a normalized vector that is orthogonal on the XY-Axis
+     * @return normalized orthogonal Vector
      */
-    //TODO: how to handle this.y = 0
     public Vector3D OrthogonalXY() {
         return new Vector3D(1, -this.x/this.y, 0).normalize();
     }
