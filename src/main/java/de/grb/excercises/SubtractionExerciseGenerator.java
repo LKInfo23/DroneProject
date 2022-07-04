@@ -11,6 +11,18 @@ public class SubtractionExerciseGenerator extends AddSubExercise {
         solution = v1.sub(v2);
     }
 
+    @Override
+    public String AsStringExercise() {
+        return "Die Drone befindet sich am Punkt: " + v1 + "\nUnd soll zum Punkt: " + solution +
+                "\nGeben sie den Vektor an den die Drone abfliegen muss.\n";
+    }
+
+    @Override
+    public String AsStringExerciseWSolution() {
+        return "Die Drone befindet sich am Punkt: " + v1 + "\nUnd soll zum Punkt: " + solution +
+                "\nGeben sie den Vektor an den die Drone abfliegen muss.\n" + v2 + "\n";
+    }
+
     public String toString() {
         return v1.toString() + " - " + v2.toString() + " = " + solution.toString() ;
     }

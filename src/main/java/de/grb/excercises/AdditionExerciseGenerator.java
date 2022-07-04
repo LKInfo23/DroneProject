@@ -11,6 +11,18 @@ public class AdditionExerciseGenerator extends AddSubExercise {
         solution = v1.add(v2);
     }
 
+    @Override
+    public String AsStringExercise() {
+        return "Die Drone befindet sich am Punkt: " + v1 + "\nUnd fliegt den Vektor: " + v2 +
+                "\nGeben sie den Punkt an an dem die Drone sich jetzt befindet.\n";
+    }
+
+    @Override
+    public String AsStringExerciseWSolution() {
+        return "Die Drone befindet sich am Punkt: " + v1 + "\nUnd fliegt den Vektor: " + v2 +
+                "\nGeben sie den Punkt an an dem die Drone sich jetzt befindet.\n" + solution + "\n";
+    }
+
     public String toString() {
         return v1.toString() + " + " + v2.toString() + " = " + solution.toString() ;
     }

@@ -126,4 +126,8 @@ public class LinearFunction {
     public Vector3D getDirection() {
         return Direction;
     }
+
+    public String withoutDirection() {
+        return "x = " + StartingPoint.toString() + " + r * (";
+    }
 }

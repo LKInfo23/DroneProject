@@ -9,9 +9,31 @@ public class ParkourExerciseGenerator extends ParkourExercise {
     @Override
     public void Generate() {
         PointList = new ArrayList<>(5);
-        for (int i = 0; i < 5; i++) {
+        PointList.add(new Vector3D(0,0,2));
+        for (int i = 1; i < 5; i++) {
             PointList.add(new Vector3D(10,0));
         }
+    }
+
+    //very crude and useless implementation
+    @Override
+    public String AsStringExercise() {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < 4; i++ ) {
+            sb.append("Die Drone ist am Punkt: ").append(PointList.get(i)).append("\n");
+            sb.append("Und muss zum Punkt: ").append(PointList.get(i+1)).append("\n");
+        }
+        return sb.toString();
+    }
+    //very crude and useless implementation
+    @Override
+    public String AsStringExerciseWSolution() {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < 4; i++ ) {
+            sb.append("Die Drone ist am Punkt: ").append(PointList.get(i)).append("\n");
+            sb.append("Und muss zum Punkt: ").append(PointList.get(i+1)).append("\n");
+        }
+        return sb.toString();
     }
 
     public String toString() {

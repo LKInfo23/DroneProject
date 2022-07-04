@@ -14,7 +14,7 @@ public class ExerciseDemo {
             System.out.println(Exercise + ":");
             a = exerciseFactory.getExercise(Exercise);
             a.Generate();
-            System.out.println(a);
+            System.out.println(a.AsStringExerciseWSolution());
         }
 
     }
