@@ -5,6 +5,7 @@ import de.grb.commands.CommandManger;
 import de.grb.networking.DroneCommunicator;
 
 import java.net.SocketException;
+import java.net.UnknownHostException;
 
 public class DroneProject {
     
@@ -23,6 +24,8 @@ public class DroneProject {
             
         } catch (SocketException e) {
             e.printStackTrace();
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
         }
     }
 }
