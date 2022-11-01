@@ -1,5 +1,7 @@
 package de.grb.vectormath;
+import java.util.Locale;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Vector3D {
 
@@ -42,6 +44,16 @@ public class Vector3D {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public Vector3D(double[] a) {
+        if(a.length != 3) {
+            this.x = this.y = this.z = 0;
+            return;
+        }
+        this.x = a[0];
+        this.y = a[1];
+        this.z = a[2];
     }
 
     /**
@@ -154,6 +166,15 @@ public class Vector3D {
         return "(" + this.x + ", " + this.y + ", " + this.z + ")";
     }
 
+    public String[] toStringArr() {
+        String[] v = new String[3];
+        v[0] = Double.toString(this.x);
+        v[1] = Double.toString(this.y);
+        v[2] = Double.toString(this.z);
+
+        return v;
+    }
+
     /**
      * Method to find if two vectors are collinear
      * @param v the vector where the collinearity needs to be found with
@@ -170,6 +191,30 @@ public class Vector3D {
      * @return normalized orthogonal Vector
      */
     public Vector3D OrthogonalXY() {
-        return new Vector3D(1, -this.x/this.y, 0).normalize();
+        return new Vector3D(1, -this.x/this.y, 0); //.normalize();
     }
+
+    public void readVectorFromStdIO() {
+        Scanner in = new Scanner(System.in).useLocale(Locale.US);
+        this.x = in.nextDouble();
+        this.y = in.nextDouble();
+        this.z = in.nextDouble();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vector3D vector3D = (Vector3D) o;
+        return Double.compare(vector3D.x, x) == 0 && Double.compare(vector3D.y, y) == 0 && Double.compare(vector3D.z, z) == 0;
+    }
+
+    public double distance(Vector3D v) {
+        return Math.sqrt((this.x - v.x)*(this.x - v.x) + (this.y - v.y)*(this.y - v.y) + (this.z + v.z)*(this.z + v.z));
+    }
+
+    public double AngleBetween(Vector3D v) {
+        return Math.acos(this.dot(v) / this.magnitude() * v.magnitude());
+    }
+
 }
