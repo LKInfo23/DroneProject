@@ -1,5 +1,6 @@
 package de.grb.excercises;
 
+import de.grb.commands.CommandManger;
 import de.grb.vectormath.Vector3D;
 
 import java.util.ArrayList;
@@ -34,6 +35,21 @@ public class ParkourExerciseGenerator extends ParkourExercise {
             sb.append("Und muss zum Punkt: ").append(PointList.get(i+1)).append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public boolean AskQuestion() {
+        return true;
+    }
+
+    @Override
+    public boolean isCorrect(Vector3D answer) {
+        return false;
+    }
+
+    @Override
+    public void flyExerciseSysout(CommandManger commandManger) {
+
     }
 
     public String toString() {
